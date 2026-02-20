@@ -41,7 +41,7 @@ Possible Causes:
 2. Scanned character not in the alphabet
 Most common error recovery strategy - **Panic Mode**. Delete successive input character until lexer matches a pattern.
 ---
-Other more complex recovery stratergies(Often not worth it):
+Other more complex recovery strategies(Often not worth it):
 1. Delete one character from the remaining input.
 2. Insert a missing character into the remaining input.
 3. Replace a character by another character.
@@ -188,4 +188,59 @@ Important Conventions:
 Example:
 ![[Pasted image 20260220231412.png]]
 - Notice how we return token (token name, attribute)
-## Recognition of 
+## Recognition of identifiers and keywords
+![[Pasted image 20260220233102.png]]
+- Keywords are reserved, they look like identifiers but are not identifier
+- This transition diagram will also idenitfy the keywords as well.
+We can handle keywords in two ways
+1. Install the reserved words in the **symbol table** initially. A field of the symbol-table entry indicates that these strings are never ordinary identifiers, and tells which token they represent. 
+	- When we find an identifier, a call to `installID` places it in the symbol table if it is not already there and returns a pointer to the symbol-table entry for the lexeme found. 
+	- Any identifier not in the symbol table during lexical analysis cannot be a reserved word, so its token is **id**. 
+	- The function `getToken` examines the symbol table entry and returns whatever token name the symbol table says this lexeme represents — either **id** or one of the keyword tokens initially installed.
+2. Create separate transition diagrams for each keyword. 
+	- These consists of states representing the situation after each successive letter of the keyword is seen, followed by a test for a "nonletter-or-digit" (any character that cannot be the continuation of an identifier). 
+	- This check ensures the identifier has ended; otherwise, we might incorrectly return **then** for a lexeme like `thenextvalue` (where `then` is just a prefix). 
+	- If using this approach, we must prioritize reserved-word tokens over **id** when a lexeme matches both patterns.
+	- We do not use this approach in our example, which is why the states in following figure are unnumbered.
+	![[Pasted image 20260220235614.png]]
+## Completion of the Running Example
+![[Pasted image 20260221003337.png]]![[Pasted image 20260221003358.png]]
+## Architecture of a Transition-Diagram-Based Lexical Analyzer
+```cpp
+TOKEN relop() {
+	Token retToken = new Token(RELOP);
+	while (1) {
+		switch(state) {
+			case 0:
+				c = nextChar();
+				if (c == '<') state = 1;
+				else if (c == '=') state = 5;
+				else if (c == '>') state = 6;
+				else fail(); /*lexme is not a relop*/
+				break;
+			case 1: ...
+			...
+			case 8:
+				retract();
+				retToken.attribute = GT;
+				return retToken;
+		}
+	}
+}
+```
+- `state` variable holds state, and lexer works on switch case of state
+### `fail()`
+- Depends on global error recovery strategy. 
+- Resets `forward` to `lexemeBegin`,for another transition diagram to work on true beginning of unprocessed input
+- If no transition diagrams left, `fail()` could initiate an error-correction phase
+---
+Ways code like above fit into the entire lexical analyzer
+1. We could arrange for the transition diagrams for each token to be tried sequentially. The `fail()` resets the `forward` pointer and starts next transition diagram. This allows TT for individual keywords. We have only to use these before we use the diagram for **id**, in order for the keywords to be reserved words.
+2. We could run these TTs "in parallel" - feed the input to all diagrams at once.
+	- Conflict resolution: If one diagram matches but others can still continue, we use the **Longest Prefix Match** rule. 
+	- We take the longest prefix of the input that matches any pattern (e.g., preferring **id** `thenext` over keyword **then**, or `->` over `-`).
+3. **The Pro Approach (Preferred)**: Combine all transition diagrams into one big one.
+	- Read input until there's no possible next state.
+	- Then take the **longest lexeme** that matched any pattern (Longest Prefix Match).
+	- In our running example, this is easy because no two tokens start with the same char (can just merge all start states). 
+	- In general, merging them is way more complex (covered later).
