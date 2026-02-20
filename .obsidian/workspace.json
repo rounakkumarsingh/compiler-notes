@@ -1,0 +1,227 @@
+{
+  "main": {
+    "id": "80a28db94274e0b0",
+    "type": "split",
+    "children": [
+      {
+        "id": "d190bc80d4a4b586",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c5af76d683ceab93",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 Lexical Analysis/Lexer.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lexer"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "33433e9448ad4eac",
+    "type": "split",
+    "children": [
+      {
+        "id": "51f4e645ae00c825",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c849fa5b27b173ed",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "f066c787e1cc9c6d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "abae8da2ef04e336",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 332.5,
+    "collapsed": true
+  },
+  "right": {
+    "id": "1af77343e5ca367c",
+    "type": "split",
+    "children": [
+      {
+        "id": "42b9cdb4441d07c2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "39646acee27a4710",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "03 Semantic Analysis/overview.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for overview"
+            }
+          },
+          {
+            "id": "a318c307223964d3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "03 Semantic Analysis/overview.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from overview"
+            }
+          },
+          {
+            "id": "4a823f88de56581a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "2570b9944a241883",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "0b0649252aa846b8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "03 Semantic Analysis/overview.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of overview"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "c5af76d683ceab93",
+  "lastOpenFiles": [
+    "Pasted image 20260220231412.png",
+    "Pasted image 20260220223643.png",
+    "Pasted image 20260220014424.png",
+    "Pasted image 20260220014006.png",
+    "Pasted image 20260220012603.png",
+    "Pasted image 20260220004130.png",
+    "Pasted image 20260220004102.png",
+    "Pasted image 20260219235048.png",
+    "Crafting Interpreter/Scanning(Lexing)/Scanning.md",
+    "01 Lexical Analysis/Lexer.md",
+    "Pasted image 20260219225127.png",
+    "Untitled.canvas",
+    "02 Syntax Analysis/overview.md",
+    "Index.md",
+    "Interpreter Pattern.png",
+    "Example AST of expression.png",
+    "Crafting Interpreter/Interpreting or Evaluatiing/Evaluation.md",
+    "Crafting Interpreter/Parsing/Parsing.md",
+    "Crafting Interpreter/Parsing/Recursive Descent Parsing.md",
+    "Crafting Interpreter/Parsing/Pratt Parsing.md",
+    "Crafting Interpreter/Parsing/Abstract Syntax Trees/Abstract Syntax Trees.md",
+    "Crafting Interpreter/Interpreting or Evaluatiing",
+    "Untitled.base",
+    "Crafting Interpreter/Parsing/Bytecode/Bytecode.md",
+    "Crafting Interpreter/Parsing/Bytecode",
+    "Crafting Interpreter/Parsing/Abstract Syntax Trees",
+    "Crafting Interpreter/Parsing",
+    "06 Runtime/overview.md",
+    "Crafting Interpreter/Scanning(Lexing)",
+    "Crafting Interpreter",
+    "03 Semantic Analysis/overview.md",
+    "06 Runtime",
+    "05 Code Generation/overview.md",
+    "05 Code Generation",
+    "04 IR Generation/overview.md",
+    "04 IR Generation"
+  ]
+}
